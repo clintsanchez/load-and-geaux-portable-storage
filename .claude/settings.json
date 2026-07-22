@@ -1,11 +1,11 @@
 {
-  "permissions": [
-    "git",
-    "github",
-    "read",
-    "write",
-    "bash"
-  ],
+  "permissions": {
+    "git": true,
+    "github": true,
+    "read": true,
+    "write": true,
+    "bash": true
+  },
   "tools": {
     "github": {
       "enabled": true
