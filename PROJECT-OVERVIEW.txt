@@ -1,0 +1,353 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║              LOAD AND GEAUX PORTABLE STORAGE — PROJECT OVERVIEW             ║
+║                                                                              ║
+║                          ✅ ONBOARDING COMPLETE                            ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+PROJECT STATUS
+═════════════════════════════════════════════════════════════════════════════
+
+  Phase 1: Foundation & Setup              ✅ COMPLETE
+  Phase 2: Website Audit & Strategy        📋 READY TO START
+  Phase 3: Content Execution               📋 PLANNED (Aug-Sep 2026)
+  Phase 4: Optimization & Marketing        📋 PLANNED (Sep+ 2026)
+
+
+CLIENT INFORMATION
+═════════════════════════════════════════════════════════════════════════════
+
+  Business:      Load and Geaux Portable Storage
+  Industry:      Portable Storage & Shipping Container Rentals/Sales
+  Location:      Baton Rouge, Louisiana
+  Services:      Portable containers, climate-controlled storage, sales
+
+  Contact:       loadandgeauxstorage@gmail.com
+  Phone:         +1 (225) 501-2830
+
+  Brand Colors:  Forest Green (#2D5016), White, Louisiana State Green (#004D40)
+  Brand Tone:    Friendly + Professional + Locally Rooted
+
+
+WHAT'S BEEN COMPLETED
+═════════════════════════════════════════════════════════════════════════════
+
+✅ DOCUMENTATION (7 comprehensive guides)
+   • CLAUDE.md — 800+ lines of project instructions and context
+   • 00-CLIENT-BRIEF.md — Complete client overview and deliverables
+   • brand-style-guide.md — Brand voice and visual standards guide
+   • BACKLOG.md — 200+ prioritized work items and tasks
+   • README.md — Project overview and quick reference
+   • GETTING-STARTED.md — Quick-start guide for new team members
+   • ONBOARDING-SUMMARY.md — Phase 1 completion summary
+
+✅ PROJECT STRUCTURE (organized like Tru-Tex reference)
+   • /brand/logos — 39+ logo variations (SVG, PNG, multiple scales)
+   • /brand/guides — HTML and PDF brand guidelines
+   • /docs — 14+ strategy and research documents
+   • /blog — Clusters, drafts, and published content folders
+   • /website — Website code directory (ready for setup)
+   • /marketing — Campaigns and templates folder
+   • /seo — Keyword research and optimization folder
+   • /social — Social media calendar and graphics folder
+   • /assets — 191 media files organized by type
+   • /.claude — Configuration and project settings
+
+✅ ASSETS ORGANIZED & READY (191 files)
+   • Photography: 52 product, lifestyle, and branded images
+   • Infographics: 33 data visualizations (HTML + PNG/JPG)
+   • Testimonials: 106 customer review cards (HTML + PNG)
+   • Logos: 39 variations (SVG, PNG at 1x/2x/3x scales)
+   • Brand Guides: HTML and PDF versions
+   • Research: Market analysis, competitive intel, customer data
+   • Strategy: Blog clusters, content plans, brand positioning
+
+✅ GITHUB REPOSITORY INITIALIZED
+   • Repository: /Users/clintsanchez/Documents/Claude/Projects/Load and Geaux Portable Storage
+   • Initial commit: 269 files
+   • Git configured with project settings
+   • .gitignore and .claude/settings.json created
+   • Ready for team collaboration
+
+
+WHAT'S READY TO USE
+═════════════════════════════════════════════════════════════════════════════
+
+📦 BRAND ASSETS
+   → 39+ logos in multiple formats (use from brand/logos/)
+   → Color palette defined: Forest Green, White, Louisiana State Green
+   → Brand guidelines available (HTML and PDF)
+   → Font recommendations: Inter (headlines), Segoe UI (body)
+
+📝 CONTENT & STRATEGY
+   → Blog cluster strategy for 4 main content themes
+   → 10+ article outlines with keywords and angles
+   → 50+ customer testimonials and reviews (ready to repurpose)
+   → Market research and competitive analysis completed
+   → Customer data organized in spreadsheets
+
+📸 GRAPHICS & MEDIA
+   → 52 product and lifestyle photos (containers, vehicles, offices)
+   → 33 infographics on containers, sustainability, market trends
+   → 106 testimonial cards (HTML and PNG ready to embed)
+   → All organized and searchable by topic
+
+📚 DOCUMENTATION
+   → Complete brand strategy (comprehensive positioning)
+   → Customer research (Google Reviews, testimonials)
+   → Market analysis (competitive landscape, trends)
+   → Container specifications (technical data)
+   → SEO strategy (keywords, local SEO, authority building)
+
+
+KEY PROJECT CONSTRAINTS
+═════════════════════════════════════════════════════════════════════════════
+
+⚠️  BRAND COMPLIANCE
+    • NO clip art or hand-drawn SVGs of real objects
+    • Use AI-generated images from client's actual photos (Gemini/Claude)
+    • Check /assets/ first before creating anything new
+
+🎨 DESIGN STANDARDS
+    • GitHub repo is source of truth (authoritative)
+    • Stitch + Claude Design: one-way re-sync (repo is source)
+    • Landing pages: must pass 16-element conversion checklist
+    • Brand colors: Forest Green primary, Louisiana State Green accents
+
+💻 DEVELOPMENT WORKFLOW
+    • Branch naming: feature/feature-name or content/article-name
+    • All PRs require review before merge
+    • Commit messages must be clear and descriptive
+    • Test locally before marking ready
+
+
+QUICK START (5 MINUTES)
+═════════════════════════════════════════════════════════════════════════════
+
+1. Navigate to project:
+   cd "/Users/clintsanchez/Documents/Claude/Projects/Load and Geaux Portable Storage"
+
+2. Read key documentation:
+   cat CLAUDE.md                    (Project instructions)
+   cat 00-CLIENT-BRIEF.md           (Client overview)
+   cat brand-style-guide.md         (Brand standards)
+
+3. Explore assets:
+   ls brand/logos/                  (Logo files)
+   ls assets/photography/           (Product photos)
+   ls assets/graphics/infographics/ (Data visualizations)
+
+4. Pick a task from BACKLOG.md
+
+5. Create a branch:
+   git checkout -b feature/your-feature-name
+
+6. Do the work, commit, push, create PR
+
+
+NEXT STEPS (PHASE 2)
+═════════════════════════════════════════════════════════════════════════════
+
+📅 TIMELINE: August 2026
+
+WEEK 1 (Aug 1-7):
+  □ Run /pre-launch-audit on loadandgeaux.com
+  □ Document current website structure
+  □ Check brand consistency across site
+  □ Verify Google Business Profile status
+  □ Document mobile responsiveness
+
+WEEK 2 (Aug 8-15):
+  □ Technical SEO audit (titles, meta descriptions, headers)
+  □ Local SEO check (schema markup, citations)
+  □ Competitive analysis (3-5 competitors)
+  □ Create SEO improvement roadmap
+  □ Identify quick wins
+
+
+PHASE 3: CONTENT EXECUTION (August-September 2026)
+═════════════════════════════════════════════════════════════════════════════
+
+Blog Cluster 1: Container Types & Selection
+  □ "What Size Container Do You Need? (16ft vs 20ft Guide)"
+  □ "Climate-Controlled vs Standard Storage"
+  □ "Residential vs Commercial Uses"
+  □ Container size selection quiz/tool
+
+Blog Cluster 2: Sustainability & Innovation
+  □ "Corten Steel Containers: Durability & Corrosion"
+  □ "Why Shipping Containers Are Eco-Friendly"
+  □ "Recycled Containers: Same Quality, Less Impact"
+
+Blog Cluster 3: Local Authority
+  □ "Why Baton Rouge Chooses Load and Geaux"
+  □ "Home Renovation Trends in Baton Rouge"
+  □ "Construction Storage Solutions"
+
+Blog Cluster 4: Success Stories
+  □ Customer case studies
+  □ Before/after comparisons
+  □ Industry-specific use cases
+
+Landing Pages:
+  □ Container size selector
+  □ Service-specific landing pages (Rentals, Sales, Climate-Controlled)
+  □ Lead magnet pages (guide downloads, calculators)
+
+
+PHASE 4: OPTIMIZATION & MARKETING (September 2026+)
+═════════════════════════════════════════════════════════════════════════════
+
+Email & Nurture Sequences:
+  □ Welcome sequence (3-5 emails)
+  □ Educational series (5-10 emails)
+  □ Lead nurture sequence
+  □ Testimonial showcase campaign
+
+Social Media:
+  □ Content calendar (3 months)
+  □ Graphics library (using testimonial cards)
+  □ Hashtag strategy
+  □ Seasonal campaign planning
+
+Conversions:
+  □ A/B testing (headlines, CTAs, forms)
+  □ Form optimization
+  □ Page speed optimization
+  □ Conversion funnel analysis
+
+
+TEAM & COMMUNICATION
+═════════════════════════════════════════════════════════════════════════════
+
+CLIENT
+  Email:      loadandgeauxstorage@gmail.com
+  Phone:      +1 (225) 501-2830
+  Platform:   HoneyBook (project management)
+
+BLAKSHEEP CREATIVE
+  Manager:    Clint Sanchez
+  Email:      clint@clintsanchez.com
+  Tools:      GitHub, Claude Code, Figma
+
+GETTING HELP
+  • Check CLAUDE.md for project context
+  • Check brand-style-guide.md for brand questions
+  • Check BACKLOG.md for task prioritization
+  • Escalate to Clint for decisions
+
+
+REPOSITORY STRUCTURE REFERENCE
+═════════════════════════════════════════════════════════════════════════════
+
+Load and Geaux Portable Storage/
+├── README.md                         ← Project overview
+├── CLAUDE.md                         ← Project instructions (START HERE)
+├── 00-CLIENT-BRIEF.md                ← Client overview
+├── brand-style-guide.md              ← Brand standards
+├── BACKLOG.md                        ← Work items & timeline
+├── GETTING-STARTED.md                ← Quick reference
+├── ONBOARDING-SUMMARY.md             ← Phase 1 summary
+│
+├── brand/
+│   ├── logos/                        ← 39+ logo variations
+│   ├── load---geaux-portable-storage-brand-guide.html
+│   └── load---geaux-portable-storage_brand_guide.pdf
+│
+├── docs/                             ← 14+ strategy documents
+│   ├── Brand strategy & information
+│   ├── Market research & competitive analysis
+│   ├── Blog cluster strategy (Excel)
+│   ├── Customer reviews & testimonials
+│   └── Container specifications
+│
+├── blog/
+│   ├── clusters/                     ← Organized by topic
+│   ├── drafts/                       ← In-progress
+│   └── published/                    ← Live articles
+│
+├── assets/
+│   ├── photography/                  ← 52 product photos
+│   └── graphics/
+│       ├── infographics/             ← 33 data visualizations
+│       └── reviews/                  ← 106 testimonial cards
+│
+├── website/                          ← Website code
+├── marketing/                        ← Campaigns & templates
+├── seo/                              ← Keyword research & optimization
+├── social/                           ← Social media content
+├── memory/                           ← Project memory
+└── .claude/                          ← Configuration
+
+
+FILES TO READ FIRST
+═════════════════════════════════════════════════════════════════════════════
+
+1. CLAUDE.md (15 min)
+   → Project context, workflow, tools, guidelines
+
+2. 00-CLIENT-BRIEF.md (10 min)
+   → Client business, brand, existing deliverables, roadmap
+
+3. brand-style-guide.md (10 min)
+   → Brand voice examples, tone rules, design standards
+
+4. GETTING-STARTED.md (5 min)
+   → Quick reference for common tasks
+
+5. BACKLOG.md (5 min)
+   → Pick your first task
+
+
+SUCCESS METRICS
+═════════════════════════════════════════════════════════════════════════════
+
+Phase 2 Success (August):
+  ✓ Website audit completed and documented
+  ✓ SEO roadmap created
+  ✓ Competitive analysis finished
+  ✓ Analytics tracking configured
+
+Phase 3 Success (August-September):
+  ✓ 10+ blog articles published
+  ✓ Testimonial showcase live
+  ✓ Lead magnets created
+  ✓ Service pages optimized
+
+Phase 4 Success (September+):
+  ✓ 20%+ traffic increase
+  ✓ Improved conversion rate
+  ✓ Google ranking improvements
+  ✓ Email list growth
+
+
+IMPORTANT NOTES
+═════════════════════════════════════════════════════════════════════════════
+
+✓ This is a REAL CLIENT with real customers and business needs
+✓ All assets are organized and ready to use
+✓ Quality matters — this will be live on their website
+✓ Brand consistency is critical for a growing local business
+✓ Use existing assets before creating new ones
+✓ GitHub repo is the source of truth
+
+
+START HERE
+═════════════════════════════════════════════════════════════════════════════
+
+1. cd to project directory
+2. Read CLAUDE.md
+3. Review 00-CLIENT-BRIEF.md
+4. Check brand-style-guide.md
+5. Pick a task from BACKLOG.md
+6. Create a feature branch
+7. Do great work
+
+✨ Questions? Check the documentation or ask Clint!
+
+═════════════════════════════════════════════════════════════════════════════
+Project Created: July 22, 2026
+Status: Ready for Phase 2: Website Audit & Strategy
+Location: /Users/clintsanchez/Documents/Claude/Projects/Load and Geaux Portable Storage
+═════════════════════════════════════════════════════════════════════════════
