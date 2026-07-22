@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset 1: 16-foot vs 20-foot Comparison</title>
+    <!-- Frameworks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-primary: #094840;
+            --brand-accent: #7BDCB5;
+            --brand-dark: #32373c;
+            --brand-white: #ffffff;
+            --font-main: 'Outfit', sans-serif;
+            --container-width: 781px;
+            --container-height: 781px;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: transparent;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #capture {
+            width: var(--container-width);
+            height: var(--container-height);
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 45px; /* Tightened padding to prevent bottom cutoff */
+        }
+
+        /* Industrial blueprint texture overlay */
+        .grid-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, #094840 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .header {
+            position: relative;
+            z-index: 10;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .tag {
+            background-color: var(--brand-primary);
+            color: white;
+            padding: 6px 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.7rem;
+            display: inline-block;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            box-shadow: 3px 3px 0px var(--brand-accent);
+        }
+
+        .headline {
+            font-size: 2.6rem;
+            line-height: 1;
+            font-weight: 900;
+            color: var(--brand-primary);
+            text-transform: uppercase;
+            letter-spacing: -0.04em;
+        }
+
+        .comparison-container {
+            flex: 1;
+            display: flex;
+            gap: 15px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .panel {
+            flex: 1;
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 25px 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+
+        .panel-featured {
+            background: white;
+            border: 2px solid var(--brand-primary);
+            box-shadow: 0 10px 25px rgba(9, 72, 64, 0.05);
+        }
+
+        .container-visual {
+            width: 100%;
+            height: 110px; /* Reduced height to save vertical space */
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .box-3d {
+            background: var(--brand-primary);
+            border: 2px solid var(--brand-accent);
+            border-radius: 4px;
+            position: relative;
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .box-16 { width: 130px; height: 75px; opacity: 0.85; }
+        .box-20 { width: 175px; height: 75px; }
+
+        .size-label {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--brand-primary);
+            margin-bottom: 3px;
+            text-transform: uppercase;
+        }
+
+        .capacity-stat {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        .feature-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+            padding: 10px 12px;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #f1f5f9;
+        }
+
+        .panel-featured .feature-item {
+            background: #f8fafc;
+        }
+
+        .feature-item i {
+            color: var(--brand-primary);
+            font-size: 0.85rem;
+            width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .footer {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #f1f5f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .brand-sig {
+            font-size: 9px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #94a3b8;
+        }
+
+        .logo-small {
+            height: 22px;
+        }
+
+        .most-popular {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--brand-accent);
+            color: var(--brand-primary);
+            font-size: 9px;
+            font-weight: 900;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="capture">
+        <div class="grid-overlay"></div>
+
+        <div class="header">
+            <!-- REFINED: User-centric kicker -->
+            <div class="tag">Size Your Move With Confidence</div>
+            <h1 class="headline">16 Foot vs 20 Foot <br><span class="text-slate-300">Space Comparison.</span></h1>
+        </div>
+
+        <div class="comparison-container">
+            <!-- 16 FOOT OPTION -->
+            <div class="panel">
+                <div class="container-visual">
+                    <div class="box-3d box-16 flex items-center justify-center">
+                        <span class="text-white font-black text-[10px]">16 FT</span>
+                    </div>
+                </div>
+                <h2 class="size-label">16' GEAUX Box</h2>
+                <div class="capacity-stat">Fits ~3-4 Rooms</div>
+                
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="fa-solid fa-house-user"></i>
+                        <span>Studio / Apartment Moves</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-paint-roller"></i>
+                        <span>1-Room Remodel Staging</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-truck-pickup"></i>
+                        <span>Tighter Driveway Space</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                        <span>Seasonal Home Staging</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 20 FOOT OPTION -->
+            <div class="panel panel-featured">
+                <div class="most-popular">Most Popular</div>
+                <div class="container-visual">
+                    <div class="box-3d box-20 flex items-center justify-center">
+                        <span class="text-white font-black text-[10px]">20 FT</span>
+                    </div>
+                </div>
+                <h2 class="size-label">20' GEAUX Box</h2>
+                <div class="capacity-stat">Fits ~5-6 Rooms</div>
+                
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="fa-solid fa-truck-ramp-box"></i>
+                        <span>Full 2-Bedroom Home Move</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-couch"></i>
+                        <span>Bulky Furniture & Gear</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-hammer"></i>
+                        <span>Multi-Room Renovations</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-shield-heart"></i>
+                        <span>Maximum Margin for Error</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="brand-sig">Baton Rouge • Ascension • St. Amant</div>
+            <img src="https://loadandgeaux.com/wp-content/uploads/2024/01/load-and-geaux-portable-storage-original-green-horizontal-logo.svg" class="logo-small" alt="Load & Geaux">
+        </div>
+    </div>
+
+</body>
+</html>

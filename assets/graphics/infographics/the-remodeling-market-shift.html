@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset 4: Remodel Demand Data Graphic</title>
+    <!-- Frameworks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-primary: #094840;
+            --brand-accent: #7BDCB5;
+            --brand-dark: #052622;
+            --brand-white: #ffffff;
+            --font-main: 'Outfit', sans-serif;
+            --container-width: 781px;
+            --container-height: 781px;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: transparent;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #capture {
+            width: var(--container-width);
+            height: var(--container-height);
+            background-color: var(--brand-primary);
+            border-radius: 15px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Industrial carbon fiber background texture */
+        .industrial-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Hero Image Wash */
+        .bg-image {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1080&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.12;
+            filter: grayscale(100%) contrast(1.2);
+            z-index: 1;
+        }
+
+        .main-content {
+            position: relative;
+            z-index: 10;
+            flex: 1;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .tag {
+            background-color: var(--brand-accent);
+            color: var(--brand-primary);
+            padding: 8px 18px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-size: 0.7rem;
+            display: inline-block;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
+        }
+
+        .headline {
+            font-size: 3.4rem;
+            line-height: 0.92;
+            font-weight: 900;
+            color: var(--brand-white);
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+        }
+
+        .data-section {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .hero-stat-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-left: 8px solid var(--brand-accent);
+            padding: 40px;
+            border-radius: 4px 16px 16px 4px;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .stat-value {
+            font-size: 5.5rem;
+            font-weight: 900;
+            color: var(--brand-accent);
+            line-height: 1;
+            margin-bottom: 5px;
+            letter-spacing: -3px;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--brand-white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-desc {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 12px;
+            font-weight: 500;
+            line-height: 1.5;
+            max-width: 85%;
+        }
+
+        .secondary-stat-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 25px 40px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .circle-stat {
+            width: 80px;
+            height: 80px;
+            border: 4px solid var(--brand-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            box-shadow: 0 0 20px rgba(255,255,255,0.1);
+        }
+
+        .footer {
+            margin-top: auto;
+            padding: 35px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            background: rgba(0,0,0,0.2);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .source-note {
+            font-size: 9px;
+            color: rgba(255,255,255,0.3);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 800;
+        }
+
+        .logo-box {
+            background-color: var(--brand-white);
+            padding: 10px 20px;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="capture">
+        <div class="bg-image"></div>
+        <div class="industrial-overlay"></div>
+
+        <div class="main-content">
+            <div class="header">
+                <!-- REFINED: User-centric kicker -->
+                <div class="tag">Plan Your Project With Precision</div>
+                <h1 class="headline">The Remodeling <br><span style="color: var(--brand-accent);">Market Shift.</span></h1>
+            </div>
+
+            <div class="data-section">
+                <!-- PRIMARY STAT: Hero Value -->
+                <div class="hero-stat-card">
+                    <div class="stat-value">$603<span class="text-3xl opacity-60">BILLION</span></div>
+                    <div class="stat-label">Spent on Remodeling in 2024</div>
+                    <p class="stat-desc">
+                        As home investments reach historic highs, the demand for secure on-site storage has scaled proportionally to keep renovations organized and efficient.
+                    </p>
+                </div>
+
+                <!-- SECONDARY STAT: Comparison Row -->
+                <div class="secondary-stat-row">
+                    <div class="circle-stat">42%</div>
+                    <div>
+                        <div class="text-sm font-black text-white uppercase tracking-widest">Growth in Demand</div>
+                        <p class="text-xs text-white opacity-50 font-bold uppercase mt-1">Reported by NARI remodeling professionals nationwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="source-note">Sources: National Association of Realtors • NARI</div>
+            <div class="logo-box">
+                <img src="https://loadandgeaux.com/wp-content/uploads/2024/01/load-and-geaux-portable-storage-original-green-horizontal-logo.svg" 
+                     style="height: 22px;" 
+                     alt="Load and Geaux Logo">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

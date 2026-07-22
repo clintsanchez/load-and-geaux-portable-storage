@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset 2: Baton Rouge Summer Heat Bar Chart</title>
+    <!-- Frameworks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-primary: #094840;
+            --brand-accent: #7BDCB5;
+            --brand-dark: #052622;
+            --brand-white: #ffffff;
+            --font-main: 'Outfit', sans-serif;
+            --container-width: 781px;
+            --container-height: 781px;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: transparent;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #capture {
+            width: var(--container-width);
+            height: var(--container-height);
+            background-color: var(--brand-primary);
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+        }
+
+        /* Industrial background texture layer */
+        .industrial-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            opacity: 0.12;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .header {
+            position: relative;
+            z-index: 10;
+            margin-bottom: 60px;
+        }
+
+        .tag {
+            background-color: var(--brand-accent);
+            color: var(--brand-primary);
+            padding: 6px 16px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.75rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+        }
+
+        .headline {
+            font-size: 3.5rem;
+            line-height: 0.9;
+            font-weight: 900;
+            color: var(--brand-white);
+            text-transform: uppercase;
+            letter-spacing: -0.04em;
+        }
+
+        .subheadline {
+            font-size: 1rem;
+            color: var(--brand-accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+
+        /* Chart Layout */
+        .chart-container {
+            flex: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 30px;
+            position: relative;
+            z-index: 10;
+            padding-bottom: 40px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .bar-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            justify-content: flex-end;
+        }
+
+        .bar {
+            width: 100%;
+            max-width: 80px;
+            background: var(--brand-accent);
+            border-radius: 6px 6px 0 0;
+            position: relative;
+            transition: height 1s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .bar-value {
+            position: absolute;
+            top: -35px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+
+        .month-label {
+            margin-top: 20px;
+            color: var(--brand-accent);
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .source-note {
+            font-size: 10px;
+            color: rgba(255,255,255,0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .logo-box {
+            background-color: var(--brand-white);
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="capture">
+        <div class="industrial-overlay"></div>
+
+        <div class="header">
+            <!-- REFINED: User-centric kicker -->
+            <div class="tag">Protect Your Belongings</div>
+            <h1 class="headline">Average Summer <br><span style="color: var(--brand-accent);">High Temps.</span></h1>
+            <div class="subheadline">National Weather Service Climate Normals</div>
+        </div>
+
+        <div class="chart-container">
+            <!-- MAY -->
+            <div class="bar-group">
+                <div class="bar" style="height: 70%;">
+                    <div class="bar-value">86°</div>
+                </div>
+                <div class="month-label">May</div>
+            </div>
+
+            <!-- JUN -->
+            <div class="bar-group">
+                <div class="bar" style="height: 85%;">
+                    <div class="bar-value">91°</div>
+                </div>
+                <div class="month-label">June</div>
+            </div>
+
+            <!-- JUL -->
+            <div class="bar-group">
+                <div class="bar" style="height: 92%; background-color: #fff;">
+                    <div class="bar-value" style="color: #fff;">92°</div>
+                </div>
+                <div class="month-label" style="color: #fff;">July</div>
+            </div>
+
+            <!-- AUG -->
+            <div class="bar-group">
+                <div class="bar" style="height: 92%; background-color: #fff;">
+                    <div class="bar-value" style="color: #fff;">92°</div>
+                </div>
+                <div class="month-label" style="color: #fff;">August</div>
+            </div>
+
+            <!-- SEP -->
+            <div class="bar-group">
+                <div class="bar" style="height: 80%;">
+                    <div class="bar-value">88°</div>
+                </div>
+                <div class="month-label">Sept</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="source-note">Source: National Weather Service / LoadAndGeaux.com</div>
+            <div class="logo-box">
+                <img src="https://loadandgeaux.com/wp-content/uploads/2024/01/load-and-geaux-portable-storage-original-green-horizontal-logo.svg" 
+                     style="height: 25px;" 
+                     alt="Load and Geaux Logo">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

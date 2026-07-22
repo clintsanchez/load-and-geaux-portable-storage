@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset 3: Climate-Controlled Decision Guide</title>
+    <!-- Frameworks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-primary: #094840;
+            --brand-accent: #7BDCB5;
+            --brand-dark: #32373c;
+            --brand-white: #ffffff;
+            --font-main: 'Outfit', sans-serif;
+            --container-width: 781px;
+            --container-height: 781px;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: transparent;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #capture {
+            width: var(--container-width);
+            height: var(--container-height);
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 50px;
+        }
+
+        /* Industrial blueprint texture overlay */
+        .grid-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, #094840 1px, transparent 1px);
+            background-size: 35px 35px;
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .header {
+            position: relative;
+            z-index: 10;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .tag {
+            background-color: var(--brand-primary);
+            color: white;
+            padding: 6px 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.7rem;
+            display: inline-block;
+            margin-bottom: 12px;
+            border-radius: 4px;
+            box-shadow: 3px 3px 0px var(--brand-accent);
+        }
+
+        .headline {
+            font-size: 2.6rem;
+            line-height: 1;
+            font-weight: 900;
+            color: var(--brand-primary);
+            text-transform: uppercase;
+            letter-spacing: -0.04em;
+        }
+
+        .infographic-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            position: relative;
+            z-index: 10;
+            margin-bottom: 20px;
+        }
+
+        .decision-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .decision-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--brand-accent);
+        }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-primary);
+            font-size: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 2px solid #f1f5f9;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: var(--brand-primary);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .item-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .item {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #64748b;
+            padding: 8px;
+            background: white;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .description {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #475569;
+            line-height: 1.4;
+        }
+
+        .footer {
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid #f1f5f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .brand-sig {
+            font-size: 9px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #94a3b8;
+        }
+
+        .logo-small {
+            height: 22px;
+        }
+
+        .accent-border {
+            border-top: 5px solid var(--brand-accent);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="capture">
+        <div class="grid-overlay"></div>
+
+        <div class="header">
+            <div class="tag">Preserve Your Belongings</div>
+            <h1 class="headline">When Climate-Control <br><span class="text-slate-300">Makes More Sense.</span></h1>
+        </div>
+
+        <div class="infographic-grid">
+            <!-- SENSITIVE ITEMS -->
+            <div class="decision-card accent-border">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-couch"></i>
+                </div>
+                <h2 class="card-title">Sensitive Items</h2>
+                <div class="item-list">
+                    <div class="item">Electronics</div>
+                    <div class="item">Paper Documents</div>
+                    <div class="item">Fine Artwork</div>
+                    <div class="item">Antiques</div>
+                    <div class="item">Wood Furniture</div>
+                </div>
+            </div>
+
+            <!-- BATON ROUGE HEAT -->
+            <div class="decision-card" style="border-top-color: var(--brand-primary);">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-temperature-high"></i>
+                </div>
+                <h2 class="card-title">Baton Rouge Heat</h2>
+                <p class="description">
+                    With summer highs routinely exceeding 90°F, heat exposure can lead to the expansion, warping, and permanent degradation of sensitive materials.
+                </p>
+                <div class="mt-4 p-3 bg-white rounded-lg border border-red-50 text-[10px] font-black text-red-400 uppercase tracking-widest">
+                    High Risk: June - Aug
+                </div>
+            </div>
+
+            <!-- HUMIDITY RISK -->
+            <div class="decision-card accent-border">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-droplet-slash"></i>
+                </div>
+                <h2 class="card-title">Humidity Risk</h2>
+                <p class="description">
+                    South Louisiana humidity levels above 60% create the ideal environment for moisture buildup, condensation, and mold growth.
+                </p>
+                <div class="mt-4 p-3 bg-white rounded-lg border border-blue-50 text-[10px] font-black text-blue-400 uppercase tracking-widest">
+                    Ideal Range: 30% - 50%
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="brand-sig">Baton Rouge • St. Amant • Ascension Parish</div>
+            <img src="https://loadandgeaux.com/wp-content/uploads/2024/01/load-and-geaux-portable-storage-original-green-horizontal-logo.svg" class="logo-small" alt="Load & Geaux">
+        </div>
+    </div>
+
+</body>
+</html>

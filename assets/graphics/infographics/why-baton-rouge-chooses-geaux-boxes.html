@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset 10: Baton Rouge Storage Use Cases</title>
+    <!-- Frameworks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-primary: #094840;
+            --brand-accent: #7BDCB5;
+            --brand-dark: #052622;
+            --brand-white: #ffffff;
+            --font-main: 'Outfit', sans-serif;
+            --container-width: 781px;
+            --container-height: 1200px; /* Tall vertical format */
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: transparent;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #capture {
+            width: var(--container-width);
+            height: var(--container-height);
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+
+        /* Industrial blueprint texture overlay */
+        .grid-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, var(--brand-primary) 1.5px, transparent 1.5px);
+            background-size: 45px 45px;
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Background image wash for local context */
+        .bg-wash {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 400px;
+            background-image: url('https://loadandgeaux.com/wp-content/uploads/2024/01/load-geaux-portable-storage-container-in-front-of-home-in-baton-rouge-louisiana-1024x683.webp');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            filter: grayscale(100%);
+            z-index: 0;
+        }
+
+        .header {
+            position: relative;
+            z-index: 10;
+            padding: 60px 60px 40px;
+            text-align: center;
+            background: linear-gradient(to bottom, white 80%, rgba(255,255,255,0));
+        }
+
+        .tag {
+            display: inline-flex;
+            background: var(--brand-primary);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.75rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 4px 4px 0px var(--brand-accent);
+        }
+
+        .headline {
+            font-size: 3.2rem;
+            line-height: 0.95;
+            font-weight: 900;
+            color: var(--brand-primary);
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+        }
+
+        .use-case-list {
+            flex: 1;
+            padding: 0 60px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .use-case-card {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #e2e8f0;
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            backdrop-filter: blur(10px);
+            transition: transform 0.2s ease;
+        }
+
+        .use-case-card:hover {
+            transform: translateX(10px);
+            border-color: var(--brand-accent);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background: var(--brand-primary);
+            color: var(--brand-accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+            box-shadow: 5px 5px 0px rgba(123, 220, 181, 0.3);
+        }
+
+        .content-box h3 {
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: var(--brand-primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+
+        .content-box p {
+            font-size: 0.95rem;
+            color: #64748b;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .footer {
+            background: #f8fafc;
+            padding: 40px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .brand-sig {
+            font-size: 11px;
+            font-weight: 900;
+            color: var(--brand-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+        }
+
+        .service-loc {
+            text-transform: uppercase;
+            font-size: 10px;
+            font-weight: 800;
+            color: #94a3b8;
+            letter-spacing: 0.1em;
+            margin-bottom: 4px;
+        }
+
+        .logo-box {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="capture">
+        <div class="grid-overlay"></div>
+        <div class="bg-wash"></div>
+
+        <div class="header">
+            <div class="tag">Made for the Way You Live</div>
+            <h1 class="headline">Why Baton Rouge <br><span class="text-slate-400">Chooses Geaux Boxes.</span></h1>
+        </div>
+
+        <div class="use-case-list">
+            <!-- 1. MOVING -->
+            <div class="use-case-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-truck-ramp-box"></i>
+                </div>
+                <div class="content-box">
+                    <h3>Moving Across Town</h3>
+                    <p>Load at your own pace and skip the stress of a single-day rental truck. We handle the transport to your new driveway.</p>
+                </div>
+            </div>
+
+            <!-- 2. REMODEL STAGING -->
+            <div class="use-case-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-hammer"></i>
+                </div>
+                <div class="content-box">
+                    <h3>Remodel Staging</h3>
+                    <p>Keep furniture and materials safe and out of the dust during kitchen, bath, or flooring renovations.</p>
+                </div>
+            </div>
+
+            <!-- 3. DECLUTTERING -->
+            <div class="use-case-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+                <div class="content-box">
+                    <h3>Home Sale Prep</h3>
+                    <p>Clear out the clutter to make your home feel larger for showings without losing access to your belongings.</p>
+                </div>
+            </div>
+
+            <!-- 4. LIFE OVERLAP -->
+            <div class="use-case-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-arrows-spin"></i>
+                </div>
+                <div class="content-box">
+                    <h3>Temporary Life Overlap</h3>
+                    <p>Perfect for bridging the gap between closing dates or during transitions between leases.</p>
+                </div>
+            </div>
+
+            <!-- 5. SENSITIVE STORAGE -->
+            <div class="use-case-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-snowflake"></i>
+                </div>
+                <div class="content-box">
+                    <h3>Sensitive Item Protection</h3>
+                    <p>Climate-controlled options for electronics, documents, and heirlooms that can't handle the Louisiana heat.</p>
+                </div>
+            </div>
+
+            <!-- 6. BUSINESS OVERFLOW -->
+            <div class="use-case-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <div class="content-box">
+                    <h3>Business & Inventory</h3>
+                    <p>On-site storage for excess inventory, equipment, or seasonal supplies without a long-term lease.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div>
+                <p class="service-loc">St. Amant • Ascension • Livingston Parish</p>
+                <div class="brand-sig">loadandgeaux.com</div>
+            </div>
+            <div class="logo-box">
+                <img src="https://loadandgeaux.com/wp-content/uploads/2024/01/load-and-geaux-portable-storage-original-green-horizontal-logo.svg" class="h-6">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

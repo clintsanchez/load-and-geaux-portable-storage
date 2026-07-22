@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset 5: Portable Storage Size Decision Tree</title>
+    <!-- Frameworks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-primary: #094840;
+            --brand-accent: #7BDCB5;
+            --brand-dark: #052622;
+            --brand-white: #ffffff;
+            --font-main: 'Outfit', sans-serif;
+            --container-width: 781px;
+            --container-height: 781px;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: transparent;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #capture {
+            width: var(--container-width);
+            height: var(--container-height);
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 50px;
+        }
+
+        /* ENHANCED: Industrial blueprint texture overlay - Increased visibility */
+        .grid-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, var(--brand-primary) 1.5px, transparent 1.5px);
+            background-size: 40px 40px;
+            opacity: 0.12; /* Increased for better visibility */
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* ENHANCED: Stronger Geometric Background Shape */
+        .shape-overlay {
+            position: absolute;
+            top: -5%;
+            right: -15%;
+            width: 70%;
+            height: 110%;
+            background: linear-gradient(135deg, rgba(9, 72, 64, 0.06) 0%, rgba(123, 220, 181, 0.12) 100%);
+            transform: skewX(-12deg);
+            z-index: 0;
+            pointer-events: none;
+            border-left: 4px solid rgba(9, 72, 64, 0.08);
+        }
+
+        /* SECONDARY SHAPE: To balance the bottom left whitespace */
+        .shape-overlay-secondary {
+            position: absolute;
+            bottom: -10%;
+            left: -5%;
+            width: 40%;
+            height: 40%;
+            background: rgba(123, 220, 181, 0.05);
+            transform: rotate(15deg);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .header {
+            position: relative;
+            z-index: 10;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .tag {
+            background-color: var(--brand-primary);
+            color: white;
+            padding: 6px 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.7rem;
+            display: inline-block;
+            margin-bottom: 12px;
+            border-radius: 4px;
+            box-shadow: 4px 4px 0px var(--brand-accent);
+        }
+
+        .headline {
+            font-size: 2.6rem;
+            line-height: 1.1;
+            font-weight: 900;
+            color: var(--brand-primary);
+            text-transform: uppercase;
+            letter-spacing: -0.04em;
+        }
+
+        /* Flowchart Styling */
+        .tree-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .root-node {
+            background: var(--brand-primary);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 20px rgba(9, 72, 64, 0.2);
+            margin-bottom: 40px;
+            border: 2px solid var(--brand-accent);
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .branch-row {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .path-line {
+            width: 2px;
+            height: 40px;
+            background: #94a3b8; /* Darkened line for better visibility */
+            position: relative;
+        }
+
+        .path-line::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 8px solid #94a3b8;
+        }
+
+        .decision-path {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .scenario-box {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #cbd5e1;
+            padding: 15px;
+            border-radius: 10px;
+            width: 100%;
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            backdrop-filter: blur(8px);
+        }
+
+        .scenario-icon {
+            font-size: 1.2rem;
+            color: var(--brand-primary);
+            margin-bottom: 8px;
+        }
+
+        .scenario-text {
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--brand-dark);
+            letter-spacing: 0.5px;
+        }
+
+        .result-box {
+            background: white;
+            border: 2px solid var(--brand-primary);
+            padding: 15px 10px;
+            border-radius: 8px;
+            width: 100%;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .result-box:hover {
+            border-color: var(--brand-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        }
+
+        .result-label {
+            font-size: 0.95rem;
+            font-weight: 900;
+            color: var(--brand-primary);
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .result-sub {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        .footer {
+            margin-top: auto;
+            padding-top: 25px;
+            border-top: 1px solid #f1f5f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .brand-sig {
+            font-size: 9px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #64748b;
+        }
+
+        .logo-small {
+            height: 22px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="capture">
+        <div class="grid-overlay"></div>
+        <div class="shape-overlay"></div>
+        <div class="shape-overlay-secondary"></div>
+
+        <div class="header">
+            <div class="tag">Find Your Perfect Fit</div>
+            <h1 class="headline">Which Portable Storage <br><span class="text-slate-400">Fits Your Project?</span></h1>
+        </div>
+
+        <div class="tree-container">
+            <div class="root-node">What are you storing?</div>
+            
+            <div class="branch-row">
+                <!-- PATH 1 -->
+                <div class="decision-path">
+                    <div class="scenario-box">
+                        <i class="fa-solid fa-house-chimney-window scenario-icon"></i>
+                        <span class="scenario-text">Smaller Move / <br>1-BR Apartment</span>
+                    </div>
+                    <div class="path-line"></div>
+                    <div class="result-box mt-5">
+                        <div class="result-label">16 FT GEAUX Box</div>
+                        <div class="result-sub">Compact & Efficient</div>
+                    </div>
+                </div>
+
+                <!-- PATH 2 -->
+                <div class="decision-path">
+                    <div class="scenario-box">
+                        <i class="fa-solid fa-truck-ramp-box scenario-icon"></i>
+                        <span class="scenario-text">2-Bedroom <br>Home Move</span>
+                    </div>
+                    <div class="path-line"></div>
+                    <div class="result-box mt-5">
+                        <div class="result-label">20 FT GEAUX Box</div>
+                        <div class="result-sub">Maximum Capacity</div>
+                    </div>
+                </div>
+
+                <!-- PATH 3 -->
+                <div class="decision-path">
+                    <div class="scenario-box">
+                        <i class="fa-solid fa-hammer scenario-icon"></i>
+                        <span class="scenario-text">Home <br>Remodel</span>
+                    </div>
+                    <div class="path-line"></div>
+                    <div class="result-box mt-5">
+                        <div class="result-label">20 FT GEAUX Box</div>
+                        <div class="result-sub">Margin for Error</div>
+                    </div>
+                </div>
+
+                <!-- PATH 4 -->
+                <div class="decision-path">
+                    <div class="scenario-box">
+                        <i class="fa-solid fa-temperature-arrow-down scenario-icon"></i>
+                        <span class="scenario-text">Heat Sensitive <br>Belongings</span>
+                    </div>
+                    <div class="path-line"></div>
+                    <div class="result-box mt-5" style="border-color: var(--brand-accent);">
+                        <div class="result-label">Climate <br>Controlled</div>
+                        <div class="result-sub">Environmental Shield</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="brand-sig">Baton Rouge • Ascension • St. Amant</div>
+            <img src="https://loadandgeaux.com/wp-content/uploads/2024/01/load-and-geaux-portable-storage-original-green-horizontal-logo.svg" class="logo-small" alt="Load & Geaux">
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load & Geaux - Testimonial Card (1080px Scale)</title>
+    
+    <!-- Frameworks -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-primary: #094840; 
+            --brand-secondary: #000000;
+            --brand-dark: #32373c;
+            --brand-accent: #7bdcb5;
+            --brand-neutral: #abb8c3;
+            --font-main: 'Outfit', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: #f1f5f9;
+            padding: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Fixed 1080px Capture Area */
+        #capture {
+            width: 1080px;
+            height: 1080px; 
+            background-color: transparent; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Template Card Design */
+        .template-scaled-card {
+            width: 1080px;
+            height: 1080px;
+            background-color: white;
+            border: 17px solid var(--brand-primary); 
+            border-radius: 65px; 
+            padding: 104px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden; 
+        }
+
+        .quote-icon {
+            font-size: 130px; 
+            color: var(--brand-primary);
+            opacity: 0.2;
+        }
+
+        .stars-row {
+            color: #fbbf24;
+            font-size: 52px; 
+        }
+
+        .main-quote {
+            color: var(--brand-primary);
+            font-size: 48px; 
+            font-weight: 700;
+            line-height: 1.35;
+            font-style: italic;
+            padding: 20px 0;
+        }
+
+        .footer-row {
+            display: flex;
+            align-items: center;
+            gap: 35px; 
+            border-top: 4px solid #f3f4f6; 
+            padding-top: 52px; 
+        }
+
+        .avatar {
+            width: 138px; 
+            height: 138px;
+            background-color: #e5e7eb;
+            border-radius: 9999px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid #f3f4f6;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-name {
+            font-weight: 900;
+            color: var(--brand-primary);
+            font-size: 39px; 
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .author-sub {
+            color: #9ca3af;
+            font-size: 26px; 
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 8px;
+        }
+
+        .logo-watermark {
+            height: 52px; 
+            margin-left: auto;
+            filter: grayscale(1);
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="capture">
+        
+        <div class="template-scaled-card">
+            
+            <div class="flex justify-between items-start">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <div class="stars-row">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <!-- Condensed Review Text for Jeff Aucoin -->
+            <p class="main-quote">
+                "A wonderful experience with Load and Geaux. Zack is amazing. He did everything he said he was going to do and more! If you're looking for portable storage, this is the right company."
+            </p>
+
+            <div class="footer-row">
+                <div class="avatar">
+                    <!-- High-resolution avatar for Jeff Aucoin -->
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjUHkNN7cNIvbZlnUg-CjkNMJsD9hvNiPIfFEWMKHxPKK2Xvshbp=s192-c" alt="Jeff Aucoin">
+                </div>
+                <div>
+                    <h5 class="author-name">Jeff Aucoin</h5>
+                    <p class="author-sub">Verified Reviewer</p>
+                </div>
+                <img src="https://loadandgeaux.com/wp-content/uploads/2024/01/load-and-geaux-portable-storage-original-green-horizontal-logo.svg" 
+                     class="logo-watermark" 
+                     alt="Logo">
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

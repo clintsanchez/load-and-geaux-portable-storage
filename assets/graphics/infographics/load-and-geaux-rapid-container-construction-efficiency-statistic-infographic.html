@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load & Geaux - Efficiency Statistic</title>
+    <!-- Frameworks -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-primary: #094840;
+            --brand-accent: #7BDCB5;
+            --brand-dark: #052622;
+            --brand-white: #ffffff;
+            /* Using a robust font stack to ensure heavy weights render correctly */
+            --font-main: 'Arial Black', 'Impact', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #capture {
+            width: 781px;
+            height: 781px;
+            background-color: var(--brand-primary);
+            border-radius: 15px;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Industrial background texture layer */
+        .industrial-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .top-banner {
+            background-color: var(--brand-accent);
+            color: var(--brand-primary);
+            padding: 15px 40px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 1.2rem;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-layout {
+            display: flex;
+            flex: 1;
+            z-index: 2;
+            position: relative;
+            background-color: var(--brand-primary);
+        }
+
+        .left-content {
+            flex: 1.2;
+            padding: 40px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .right-image {
+            flex: 1;
+            background: var(--brand-dark);
+            position: relative;
+            overflow: hidden;
+            border-left: 10px solid var(--brand-accent);
+        }
+
+        .container-hero {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.1) brightness(0.9);
+        }
+
+        .headline {
+            font-size: 5.5rem;
+            line-height: 0.85;
+            font-weight: 900;
+            color: var(--brand-white);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-shadow: 4px 4px 0px var(--brand-dark);
+        }
+
+        .subheadline {
+            font-size: 1.5rem;
+            color: var(--brand-accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: var(--brand-white);
+            max-width: 95%;
+            font-weight: 700;
+            border-left: 5px solid var(--brand-accent);
+            padding-left: 20px;
+        }
+
+        .spec-tag {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(123, 220, 181, 0.3);
+            padding: 8px 15px;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 0.8rem;
+            color: var(--brand-accent);
+            text-transform: uppercase;
+            margin-top: 30px;
+            letter-spacing: 1px;
+            font-weight: 800;
+        }
+
+        .footer-branding {
+            background-color: var(--brand-dark);
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 3;
+            border-top: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .geaux-tag {
+            color: var(--brand-accent);
+            font-size: 1.5rem;
+            font-weight: 900;
+            font-style: italic;
+        }
+
+        .logo-box {
+            background-color: var(--brand-white);
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="capture">
+        <div class="industrial-overlay"></div>
+
+        <!-- Top Header Strip -->
+        <div class="top-banner">
+            <span>DID YOU KNOW?</span>
+            <span class="text-sm opacity-60">LOADANDGEAUX.COM</span>
+        </div>
+
+        <!-- Main Body Area -->
+        <div class="main-layout">
+            <!-- Left Side: Data & Copy -->
+            <div class="left-content">
+                <div class="subheadline">Rapid Construction</div>
+                <h1 class="headline">
+                    70%<br>
+                    <span style="font-size: 3.8rem; color: var(--brand-accent);">FASTER.</span>
+                </h1>
+                
+                <div class="description mt-4">
+                    Container buildings can be completed up to 70% faster than traditional construction methods, allowing for immediate deployment and use.
+                </div>
+
+                <div class="spec-tag">
+                    <i class="fa-solid fa-bolt-lightning mr-2"></i> Accelerated Project Timelines
+                </div>
+            </div>
+
+            <!-- Right Side: Existing Photo Kept -->
+            <div class="right-image">
+                <img src="https://scontent-hou1-1.xx.fbcdn.net/v/t51.82787-15/615882177_17974171646985534_4883831065036841553_n.jpg?stp=dst-jpegr_tt6&_nc_cat=102&ccb=1-7&_nc_sid=13d280&_nc_ohc=dBmA3LxtcvUQ7kNvwFQjIEe&_nc_oc=AdkZv8SLOU4sAHBO9a49azazjwp2epIl-O87sQo-PSW2DHmHnx5anDfdWUj-HqYa9lT1CwMT4xOOLmZMKsbnZpUu&_nc_zt=23&se=-1&_nc_ht=scontent-hou1-1.xx&_nc_gid=YkRgCnzXqChsmMjDmR9Asg&_nc_ss=8&oh=00_AfyAIKyF0NAEtPVdoeP079Khchym8xzm_a5C2zkWCRPezQ&oe=69B15DE1" 
+                     class="container-hero" 
+                     alt="Load & Geaux Container Delivery">
+            </div>
+        </div>
+
+        <!-- Professional Footer -->
+        <div class="footer-branding">
+            <div>
+                <div class="geaux-tag">#GEAUXFAST</div>
+                <div class="text-[10px] text-white opacity-40 uppercase tracking-widest mt-1">
+                    BATON ROUGE • NEW ORLEANS • HAMMOND
+                </div>
+            </div>
+            
+            <div class="logo-box">
+                <img src="https://loadandgeaux.com/wp-content/uploads/2024/01/load-and-geaux-portable-storage-original-green-horizontal-logo.svg" 
+                     style="height: 35px;" 
+                     alt="Load and Geaux Logo">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

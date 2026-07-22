@@ -1,0 +1,35 @@
+{
+  "permissions": [
+    "git",
+    "github",
+    "read",
+    "write",
+    "bash"
+  ],
+  "tools": {
+    "github": {
+      "enabled": true
+    },
+    "figma": {
+      "enabled": false,
+      "note": "Enable when design system is set up"
+    }
+  },
+  "hooks": {},
+  "customSettings": {
+    "project": "Load and Geaux Portable Storage",
+    "client": "Load and Geaux Portable Storage",
+    "industry": "Portable Storage & Shipping Container Rentals",
+    "contactEmail": "loadandgeauxstorage@gmail.com",
+    "contactPhone": "+1 (225) 501-2830",
+    "brandColors": {
+      "primary": "#2D5016",
+      "secondary": "#004D40",
+      "accent": "#6B7280"
+    },
+    "assetLocations": {
+      "pcloudRoot": "/Users/clintsanchez/pCloud Drive/Documents/BlakSheep Creative/Clients/Load and Geaux Portable Storage",
+      "localRoot": "/Users/clintsanchez/Documents/Claude/Projects/Load and Geaux Portable Storage"
+    }
+  }
+}
